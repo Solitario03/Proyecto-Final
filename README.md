@@ -21,13 +21,11 @@
 
 ## 🧮 Evaluación Grupal 2 
 
-**Tema:**  
-> Desarrollo de una librería en Python que realice estadísticas básicas utilizando Programación Orientada a Objetos (POO).  
-> Incluye clases, herencia y polimorfismo para el análisis de datos cuantitativos y cualitativos.
+**Tema de proyecto**  
+Tema de proyecto
 
 **Fecha de entrega:** 16 de diciembre  
 **Fecha de presentación:** 23 o 30 de diciembre  
-[Presentación 👩‍🏫](https://mar93681-jpg.github.io/Parcial-LP2/)
 
 ---
 
