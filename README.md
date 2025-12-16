@@ -45,5 +45,63 @@ Conjunto de datos con precios, autores y editoriales. DAMA 3 fuentes
 | Malvacedo Quiñonez, Jean Franco  | Solitario03  | 20231496  |
 | Mejia Auccapoma, Piero Cesar     | PC-011  | 20230399  |
 
+---
+## 📚 Fuentes de Datos
 
+### 🌐 Web Scraping
 
+<ol>
+  <li>
+    <strong>Buscalibre Perú</strong><br>
+    <a href="https://www.buscalibre.com.pe" target="_blank">https://www.buscalibre.com.pe</a><br>
+    Plataforma de comercio electrónico que ofrece un amplio catálogo de libros académicos.
+    Se extraerá información como título del libro, autor, editorial, precio, disponibilidad,
+    stock y reseñas. Para la recolección de datos se utilizará <em>BeautifulSoup</em> en páginas
+    estáticas y <em>Selenium</em> para el manejo de filtros dinámicos.
+  </li>
+  <br>
+  <li>
+    <strong>Crisol Librerías</strong><br>
+    <a href="https://www.crisol.com.pe" target="_blank">https://www.crisol.com.pe</a><br>
+    Tienda online especializada en libros técnicos y universitarios. Se extraerán datos
+    relacionados con precios promocionales, disponibilidad en tienda física y virtual,
+    así como detalles editoriales de cada libro.
+  </li>
+</ol>
+
+---
+
+### 🔗 API Pública
+
+<ol start="3">
+  <li>
+    <strong>Google Books API</strong><br>
+    <a href="https://developers.google.com/books" target="_blank">
+      https://developers.google.com/books
+    </a><br>
+    API pública que proporciona metadatos estandarizados de libros académicos,
+    como ISBN, autores, editoriales, descripciones y avances. Esta fuente complementará
+    el web scraping permitiendo enriquecer la base de datos y validar la información
+    obtenida de las tiendas online.
+  </li>
+</ol>
+
+---
+
+### 📖 Referencias complementarias
+
+<ul>
+  <li>
+    <a href="https://publicapis.dev/" target="_blank">Public APIs</a> – Directorio de APIs públicas.
+  </li>
+  <li>
+    <a href="https://www.datacamp.com/es/blog/web-scraping-projects" target="_blank">
+      DataCamp – Proyectos de Web Scraping
+    </a>
+  </li>
+  <li>
+    <a href="https://www.octoparse.es/blog/70-fuentes-de-datos-gratuitas-en-2020" target="_blank">
+      Octoparse – Fuentes de datos gratuitas
+    </a>
+  </li>
+</ul>
