@@ -1,4 +1,4 @@
-# Parcial-Lenguaje de Programación II
+# Parcial - Lenguaje de Programación II
 <table>
   <tr>
     <td style="padding-right: 20px;">
