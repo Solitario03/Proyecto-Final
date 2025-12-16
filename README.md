@@ -31,7 +31,7 @@ Facilita la comparación de precios para estudiantes
 Tiendas online de libros + APIs de comercio electrónico. 
 
 **Producto:**  
-Conjunto de datos con precios, autores y editoriales. DAMA 3 fuentes
+Conjunto de datos con precios, autores y editoriales. 
 
 **Fecha de entrega:** 16 de diciembre  
 **Fecha de presentación:** 23 o 30 de diciembre  
