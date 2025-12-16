@@ -25,10 +25,7 @@
 Proyecto que consiste en recopilar automáticamente información de distintas plataformas en línea sobre precios, stock y formatos de libros académicos, con el fin de comparar costos, identificar disponibilidad y apoyar la toma de decisiones de estudiantes e instituciones educativas.
 
 **Relevancia:**  
-Facilita la comparación de precios para estudiantes
-
-**Fuentes:**  
-Tiendas online de libros + APIs de comercio electrónico. 
+Facilita la comparación de precios para estudiantes, de modo que la busqueda de libros sea mas eficiente y amena.
 
 **Producto:**  
 Conjunto de datos con precios, autores y editoriales. 
