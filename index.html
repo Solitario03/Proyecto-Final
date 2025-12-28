@@ -1,1 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis de Libros Académicos</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            height: 100vh;
+            padding: 60px;
+            box-sizing: border-box;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            color: #1f4fd8;
+        }
+
+        ul {
+            font-size: 1.15em;
+        }
+
+        .highlight {
+            background-color: #e8edff;
+            padding: 15px;
+            border-left: 5px solid #1f4fd8;
+            margin-top: 25px;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        button {
+            padding: 10px 16px;
+            font-size: 16px;
+            margin-left: 8px;
+            cursor: pointer;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        img {
+            max-width: 100%;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide active">
+    <div class="container">
+        <h1>Análisis de precios y disponibilidad de libros académicos</h1>
+        <h2>Proyecto de integración y análisis de datos</h2>
+
+        <p><strong>Curso:</strong> Lenguaje de Programación II</p>
+        <p><strong>Modalidad:</strong> Trabajo colaborativo con GitHub</p>
+
+        <div class="highlight">
+            Objetivo: recopilar, integrar y analizar información de libros
+            académicos desde múltiples fuentes para apoyar la toma de decisiones.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+    <div class="container">
+        <h2>Problema</h2>
+        <ul>
+            <li>Los libros académicos se encuentran en múltiples plataformas.</li>
+            <li>La información está dispersa y no es uniforme.</li>
+            <li>Comparar precios y disponibilidad manualmente es ineficiente.</li>
+        </ul>
+
+        <div class="highlight">
+            Se requiere una solución automatizada que consolide la información.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+    <div class="container">
+        <h2>Trabajo colaborativo</h2>
+        <ul>
+            <li><strong>Integrante 1:</strong> Web Scraping de plataformas web (HTML).</li>
+            <li><strong>Integrante 2:</strong> Consumo de APIs académicas (OpenLibrary, OpenAlex, Crossref).</li>
+            <li><strong>Integrante 3:</strong> Integración, limpieza, análisis y visualización de datos.</li>
+        </ul>
+
+        <div class="highlight">
+            El proyecto se desarrolló siguiendo un flujo de trabajo colaborativo,
+            donde cada etapa depende de la anterior.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide">
+    <div class="container">
+        <h2>Fuentes de datos utilizadas</h2>
+        <ul>
+            <li>OpenLibrary</li>
+            <li>OpenAlex</li>
+            <li>Crossref</li>
+        </ul>
+
+        <div class="highlight">
+            El uso de múltiples fuentes permitió enriquecer y validar la información.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide">
+    <div class="container">
+        <h2>Integración y limpieza de datos</h2>
+        <ul>
+            <li>Normalización de nombres de columnas.</li>
+            <li>Unificación de estructuras.</li>
+            <li>Eliminación de datos inconsistentes.</li>
+            <li>Identificación de la fuente de cada registro.</li>
+        </ul>
+
+        <div class="highlight">
+            Este proceso fue realizado en Python utilizando la librería Pandas.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide">
+    <div class="container">
+        <h2>Distribución de libros por fuente</h2>
+
+        <img src="Graficos/libros_por_fuente.png" alt="Libros por fuente">
+
+        <div class="highlight">
+            Este gráfico muestra la contribución de cada fuente de datos
+            al conjunto final integrado.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide">
+    <div class="container">
+        <h2>Distribución de libros por año</h2>
+
+        <img src="Graficos/libros_por_anio.png" alt="Libros por año">
+
+        <div class="highlight">
+            Se observa la concentración de publicaciones en determinados períodos.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 8 -->
+<div class="slide">
+    <div class="container">
+        <h2>Principales editoriales</h2>
+
+        <img src="Graficos/libros_por_editorial.png" alt="Libros por editorial">
+
+        <div class="highlight">
+            El gráfico presenta las editoriales con mayor número de libros
+            en el dataset integrado.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 9 -->
+<div class="slide">
+    <div class="container">
+        <h2>Producto final</h2>
+        <ul>
+            <li>Dataset integrado en formato CSV.</li>
+            <li>Datos estructurados y reutilizables.</li>
+            <li>Base para futuros análisis de precios y disponibilidad.</li>
+        </ul>
+
+        <div class="highlight">
+            Archivo generado: <code>libros_academicos_integrados.csv</code>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide">
+    <div class="container">
+        <h2>Conclusiones</h2>
+        <ul>
+            <li>La automatización reduce el esfuerzo manual.</li>
+            <li>Las APIs y el scraping se complementan.</li>
+            <li>La integración mejora la calidad del análisis.</li>
+            <li>El trabajo colaborativo fue clave para el éxito del proyecto.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- SLIDE 11 -->
+<div class="slide">
+    <div class="container">
+        <h2>Cierre</h2>
+        <p>
+            Este proyecto demuestra cómo el análisis de datos puede
+            apoyar la toma de decisiones en el ámbito académico.
+        </p>
+
+        <div class="highlight">
+            Gracias por su atención.
+        </div>
+    </div>
+</div>
+
+<!-- NAVEGACIÓN -->
+<div class="nav">
+    <button onclick="prevSlide()">⏮ Anterior</button>
+    <button onclick="nextSlide()">Siguiente ⏭</button>
+</div>
+
+<div class="footer">
+    Proyecto LP II — Análisis de Datos
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        slides[index].classList.add("active");
+    }
+
+    function nextSlide() {
+        if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+    }
+
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+    }
+</script>
+
+</body>
+</html>
 
