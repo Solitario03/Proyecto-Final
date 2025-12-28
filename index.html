@@ -1,280 +1,290 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Análisis de Libros Académicos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exposición LP2 - Libros Académicos</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-            color: #333;
-            overflow: hidden;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .slide {
-            display: none;
-            height: 100vh;
-            padding: 60px;
-            box-sizing: border-box;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #0a0a2a;
+    color: #fff;
+    overflow: hidden;
+}
 
-        .slide.active {
-            display: block;
-        }
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(135deg, #000428, #004e92);
+    color: #ffe81f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid #ffe81f;
+    z-index: 10;
+}
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-        }
+/* SLIDES */
+main {
+    display: flex;
+    height: 100vh;
+    transition: transform 0.6s ease;
+}
 
-        h1, h2 {
-            color: #1f4fd8;
-        }
+section {
+    min-width: 100%;
+    height: 100vh;
+    padding: 120px 40px 80px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    overflow-y: auto;
+}
 
-        ul {
-            font-size: 1.15em;
-        }
+/* TITLES */
+h1, h2 {
+    color: #ffe81f;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-        .highlight {
-            background-color: #e8edff;
-            padding: 15px;
-            border-left: 5px solid #1f4fd8;
-            margin-top: 25px;
-        }
+p {
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+}
 
-        .nav {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
+/* GRAPH */
+.chart-box {
+    width: 80%;
+    max-width: 700px;
+    margin: 30px auto;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #4cc9f0;
+}
 
-        button {
-            padding: 10px 16px;
-            font-size: 16px;
-            margin-left: 8px;
-            cursor: pointer;
-        }
+.chart-box img {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #ffe81f;
+}
 
-        .footer {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            font-size: 0.9em;
-            color: #777;
-        }
+/* CODE */
+.code-box {
+    width: 80%;
+    max-width: 700px;
+    margin: 20px auto;
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: Consolas, monospace;
+    font-size: 0.9rem;
+    border-left: 5px solid #ffe81f;
+    overflow-x: auto;
+}
 
-        img {
-            max-width: 100%;
-            margin-top: 20px;
-            border: 1px solid #ccc;
-        }
-    </style>
+.code-comment {
+    color: #6a9955;
+}
+
+/* NAV */
+.nav {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 20;
+}
+
+button {
+    background: #004e92;
+    border: 2px solid #ffe81f;
+    color: #ffe81f;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.8);
+    padding: 8px;
+    color: #ffe81f;
+}
+</style>
 </head>
+
 <body>
 
+<header>
+    <h1>📚 Análisis de Precios y Disponibilidad de Libros Académicos</h1>
+</header>
+
+<main id="slides">
+
 <!-- SLIDE 1 -->
-<div class="slide active">
-    <div class="container">
-        <h1>Análisis de precios y disponibilidad de libros académicos</h1>
-        <h2>Proyecto de integración y análisis de datos</h2>
+<section>
+<h2>📌 Presentación del Proyecto</h2>
+<p>
+Este proyecto analiza información de <strong>libros académicos</strong> obtenida automáticamente
+desde <strong>Web Scraping</strong>, <strong>APIs públicas</strong> y archivos CSV externos,
+con el objetivo de comparar disponibilidad, editoriales y años de publicación.
+</p>
 
-        <p><strong>Curso:</strong> Lenguaje de Programación II</p>
-        <p><strong>Modalidad:</strong> Trabajo colaborativo con GitHub</p>
+<p style="margin-top:20px;">
+<strong>Curso:</strong> Lenguaje de Programación II<br>
+<strong>Docente:</strong> Denise Rosalyn Chalan Llajaruna
+</p>
 
-        <div class="highlight">
-            Objetivo: recopilar, integrar y analizar información de libros
-            académicos desde múltiples fuentes para apoyar la toma de decisiones.
-        </div>
-    </div>
-</div>
+<h2 style="margin-top:30px;">👥 Integrantes</h2>
+<p>
+Jean Franco Malvacedo Quiñonez — <strong>Web Scraping</strong><br>
+Alvaro Ferro Choque — <strong>Consumo de APIs</strong><br>
+Piero César Mejía Auccapoma — <strong>Integración, análisis y visualización</strong>
+</p>
+</section>
 
 <!-- SLIDE 2 -->
-<div class="slide">
-    <div class="container">
-        <h2>Problema</h2>
-        <ul>
-            <li>Los libros académicos se encuentran en múltiples plataformas.</li>
-            <li>La información está dispersa y no es uniforme.</li>
-            <li>Comparar precios y disponibilidad manualmente es ineficiente.</li>
-        </ul>
+<section>
+<h2>🔗 Fuentes de Datos</h2>
+<p>
+Los datos utilizados provienen de:
+</p>
 
-        <div class="highlight">
-            Se requiere una solución automatizada que consolide la información.
-        </div>
-    </div>
-</div>
+<p>
+✔ Web Scraping (HTML) – precios y disponibilidad<br>
+✔ APIs públicas (OpenLibrary, OpenAlex, Crossref)<br>
+✔ Integración y limpieza con Pandas
+</p>
+
+<p style="margin-top:20px;">
+Esta etapa corresponde al trabajo de los <strong>Integrantes 1 y 2</strong>.
+</p>
+</section>
 
 <!-- SLIDE 3 -->
-<div class="slide">
-    <div class="container">
-        <h2>Trabajo colaborativo</h2>
-        <ul>
-            <li><strong>Integrante 1:</strong> Web Scraping de plataformas web (HTML).</li>
-            <li><strong>Integrante 2:</strong> Consumo de APIs académicas (OpenLibrary, OpenAlex, Crossref).</li>
-            <li><strong>Integrante 3:</strong> Integración, limpieza, análisis y visualización de datos.</li>
-        </ul>
+<section>
+<h2>📊 Libros por Fuente</h2>
 
-        <div class="highlight">
-            El proyecto se desarrolló siguiendo un flujo de trabajo colaborativo,
-            donde cada etapa depende de la anterior.
-        </div>
-    </div>
+<div class="chart-box">
+<img src="Graficos/libros_por_fuente.png" alt="Libros por fuente">
 </div>
+
+<div class="code-box">
+<pre><code><span class="code-comment"># Conteo de libros por fuente</span>
+dataset['fuente'].value_counts().plot(kind='bar')
+plt.title("Cantidad de libros por fuente")
+plt.show()</code></pre>
+</div>
+
+<p>
+Este gráfico muestra el aporte de cada fuente de datos al conjunto final.
+</p>
+</section>
 
 <!-- SLIDE 4 -->
-<div class="slide">
-    <div class="container">
-        <h2>Fuentes de datos utilizadas</h2>
-        <ul>
-            <li>OpenLibrary</li>
-            <li>OpenAlex</li>
-            <li>Crossref</li>
-        </ul>
+<section>
+<h2>📈 Libros por Año de Publicación</h2>
 
-        <div class="highlight">
-            El uso de múltiples fuentes permitió enriquecer y validar la información.
-        </div>
-    </div>
+<div class="chart-box">
+<img src="Graficos/libros_por_anio.png" alt="Libros por año">
 </div>
+
+<div class="code-box">
+<pre><code><span class="code-comment"># Distribución temporal</span>
+dataset['anio'].value_counts().sort_index().plot()
+plt.title("Libros por año")
+plt.show()</code></pre>
+</div>
+
+<p>
+Permite identificar tendencias en publicaciones académicas.
+</p>
+</section>
 
 <!-- SLIDE 5 -->
-<div class="slide">
-    <div class="container">
-        <h2>Integración y limpieza de datos</h2>
-        <ul>
-            <li>Normalización de nombres de columnas.</li>
-            <li>Unificación de estructuras.</li>
-            <li>Eliminación de datos inconsistentes.</li>
-            <li>Identificación de la fuente de cada registro.</li>
-        </ul>
+<section>
+<h2>🏢 Libros por Editorial</h2>
 
-        <div class="highlight">
-            Este proceso fue realizado en Python utilizando la librería Pandas.
-        </div>
-    </div>
+<div class="chart-box">
+<img src="Graficos/libros_por_editorial.png" alt="Libros por editorial">
 </div>
+
+<div class="code-box">
+<pre><code><span class="code-comment"># Top editoriales</span>
+dataset['editorial'].value_counts().head(10).plot(kind='barh')
+plt.title("Editoriales con más libros")
+plt.show()</code></pre>
+</div>
+
+<p>
+Este análisis es clave para apoyar decisiones de compra institucional.
+</p>
+</section>
 
 <!-- SLIDE 6 -->
-<div class="slide">
-    <div class="container">
-        <h2>Distribución de libros por fuente</h2>
+<section>
+<h2>🧠 Conclusiones</h2>
+<p>
+✔ Se integraron múltiples fuentes automáticamente<br>
+✔ Se obtuvo un dataset estructurado y reutilizable<br>
+✔ La visualización facilita la toma de decisiones<br>
+✔ Se evidenció trabajo colaborativo real
+</p>
 
-        <img src="Graficos/libros_por_fuente.png" alt="Libros por fuente">
+<h2 style="margin-top:30px;">🚀 Producto Final</h2>
+<p>
+Dataset limpio + gráficos + presentación web
+</p>
+</section>
 
-        <div class="highlight">
-            Este gráfico muestra la contribución de cada fuente de datos
-            al conjunto final integrado.
-        </div>
-    </div>
-</div>
+</main>
 
-<!-- SLIDE 7 -->
-<div class="slide">
-    <div class="container">
-        <h2>Distribución de libros por año</h2>
-
-        <img src="Graficos/libros_por_anio.png" alt="Libros por año">
-
-        <div class="highlight">
-            Se observa la concentración de publicaciones en determinados períodos.
-        </div>
-    </div>
-</div>
-
-<!-- SLIDE 8 -->
-<div class="slide">
-    <div class="container">
-        <h2>Principales editoriales</h2>
-
-        <img src="Graficos/libros_por_editorial.png" alt="Libros por editorial">
-
-        <div class="highlight">
-            El gráfico presenta las editoriales con mayor número de libros
-            en el dataset integrado.
-        </div>
-    </div>
-</div>
-
-<!-- SLIDE 9 -->
-<div class="slide">
-    <div class="container">
-        <h2>Producto final</h2>
-        <ul>
-            <li>Dataset integrado en formato CSV.</li>
-            <li>Datos estructurados y reutilizables.</li>
-            <li>Base para futuros análisis de precios y disponibilidad.</li>
-        </ul>
-
-        <div class="highlight">
-            Archivo generado: <code>libros_academicos_integrados.csv</code>
-        </div>
-    </div>
-</div>
-
-<!-- SLIDE 10 -->
-<div class="slide">
-    <div class="container">
-        <h2>Conclusiones</h2>
-        <ul>
-            <li>La automatización reduce el esfuerzo manual.</li>
-            <li>Las APIs y el scraping se complementan.</li>
-            <li>La integración mejora la calidad del análisis.</li>
-            <li>El trabajo colaborativo fue clave para el éxito del proyecto.</li>
-        </ul>
-    </div>
-</div>
-
-<!-- SLIDE 11 -->
-<div class="slide">
-    <div class="container">
-        <h2>Cierre</h2>
-        <p>
-            Este proyecto demuestra cómo el análisis de datos puede
-            apoyar la toma de decisiones en el ámbito académico.
-        </p>
-
-        <div class="highlight">
-            Gracias por su atención.
-        </div>
-    </div>
-</div>
-
-<!-- NAVEGACIÓN -->
 <div class="nav">
-    <button onclick="prevSlide()">⏮ Anterior</button>
-    <button onclick="nextSlide()">Siguiente ⏭</button>
+<button onclick="prev()">◄ Anterior</button>
+<button onclick="next()">Siguiente ►</button>
 </div>
 
-<div class="footer">
-    Proyecto LP II — Análisis de Datos
-</div>
+<footer>
+© 2025 - Evaluación Grupal LP2
+</footer>
 
 <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".slide");
+let slide = 0;
+const slides = document.getElementById("slides");
+const total = slides.children.length;
 
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove("active"));
-        slides[index].classList.add("active");
-    }
+function show() {
+    slides.style.transform = `translateX(-${slide * 100}vw)`;
+}
 
-    function nextSlide() {
-        if (currentSlide < slides.length - 1) {
-            currentSlide++;
-            showSlide(currentSlide);
-        }
-    }
+function next() {
+    if (slide < total - 1) slide++;
+    show();
+}
 
-    function prevSlide() {
-        if (currentSlide > 0) {
-            currentSlide--;
-            showSlide(currentSlide);
-        }
-    }
+function prev() {
+    if (slide > 0) slide--;
+    show();
+}
 </script>
 
 </body>
 </html>
-
