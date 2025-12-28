@@ -5,409 +5,380 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Evaluación Grupal 2 - Libros Académicos</title>
 <style>
-/* === VARIABLES DE COLOR === */
+/* === VARIABLES DE COLOR (TU PALETA) === */
 :root {
-    --color-1: #F6A855;
-    --color-2: #8A7270;
-    --color-3: #452B1A;
-    --color-4: #C2C389;
-    --color-5: #70321B;
+    --c-naranja: #F6A855;   /* Títulos y realces */
+    --c-taupe:   #8A7270;   /* Fondos secundarios */
+    --c-cafe:    #452B1A;   /* Fondo principal */
+    --c-oliva:   #C2C389;   /* Subtítulos y texto código */
+    --c-terra:   #70321B;   /* Botones y Header */
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--c-cafe);
     color: #f0f0f0;
-    background-color: var(--color-3);
-    overflow: hidden;
+    overflow: hidden; /* Scroll interno en secciones */
 }
 
-/* === ENCABEZADO === */
+/* === HEADER === */
 header {
-    background: linear-gradient(135deg, var(--color-3) 0%, var(--color-5) 100%);
-    color: var(--color-1);
-    text-align: center;
-    padding: 1.5rem 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    border-bottom: 3px solid var(--color-1);
-    font-family: 'Arial Black', sans-serif;
-    height: 100px;
+    background: linear-gradient(135deg, var(--c-cafe), var(--c-terra));
+    border-bottom: 4px solid var(--c-naranja);
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 0; width: 100%; z-index: 100;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 header h1 {
     font-size: 1.8rem;
-    margin: 0;
-    text-shadow: none;
+    color: var(--c-naranja);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    letter-spacing: 1px;
 }
 
-/* === CONTENEDOR PRINCIPAL === */
+/* === MAIN SLIDER === */
 main {
     display: flex;
-    transition: transform 0.6s ease-in-out;
     height: 100vh;
     width: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    padding-top: 90px;
 }
 
-/* === CADA SLIDE === */
 section {
     min-width: 100%;
-    height: 100vh;
-    padding: 8rem 2rem 2rem; /* Padding top para compensar el header */
-    background: linear-gradient(180deg, var(--color-2) 0%, var(--color-3) 100%);
+    height: 100%;
+    padding: 2rem 1rem;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    overflow-y: auto; /* Permitir scroll si el contenido es largo */
-    color: white;
+    background: radial-gradient(circle at center, #5a3822 0%, var(--c-cafe) 100%);
 }
 
-/* === TIPOGRAFÍA === */
-h1.slide-title {
-    color: var(--color-1);
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
+/* === TYPOGRAPHY === */
 h2 {
-    color: var(--color-4);
-    margin-bottom: 1rem;
-    text-align: center;
-    font-size: 1.8rem;
-}
-
-h3 {
-    color: var(--color-1);
-    margin: 1.5rem 0 0.5rem 0;
-    font-size: 1.4rem;
-}
-
-p, li {
-    max-width: 900px;
-    text-align: center;
-    width: 100%;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 0.8rem;
-    color: #e0e0e0;
-}
-
-ul {
-    list-style: none;
+    color: var(--c-naranja);
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--c-oliva);
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-strong {
-    color: var(--color-1);
-}
+h3 { color: var(--c-oliva); margin: 1.5rem 0 0.5rem; font-size: 1.4rem; }
+p, li { font-size: 1.1rem; line-height: 1.6; max-width: 900px; color: #ddd; }
+ul { list-style: none; padding: 0; }
+ul li::before { content: "➤"; color: var(--c-naranja); margin-right: 8px; }
 
-/* === CAJAS DE CONTENIDO (GRÁFICAS Y CÓDIGO) === */
-.content-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* === LAYOUT BOXES === */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
+    margin-top: 1rem;
 }
 
-.chart-box {
-    flex: 1;
-    min-width: 300px;
-    background: rgba(0, 0, 0, 0.2);
+.card {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--c-taupe);
+    border-radius: 12px;
     padding: 1.5rem;
-    border-radius: 15px;
-    border: 2px solid var(--color-4);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
-.chart-img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: contain;
-    border-radius: 5px;
-    border: 1px solid var(--color-2);
-    background: rgba(255,255,255,0.05);
-}
-
+/* === CODE BLOCKS === */
 .code-box {
-    flex: 1;
-    min-width: 300px;
     background: #1e1e1e;
+    border-left: 5px solid var(--c-naranja);
     padding: 1rem;
-    border-radius: 10px;
-    border-left: 5px solid var(--color-1);
-    font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.85rem;
     overflow-x: auto;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
-    max-height: 400px;
+}
+pre { margin: 0; }
+.kw { color: #569cd6; } .str { color: #ce9178; } .com { color: #6a9955; }
+
+/* === DATA TABLES (PINOCHO) === */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+.data-table th { background: var(--c-terra); color: var(--c-naranja); padding: 10px; }
+.data-table td { border-bottom: 1px solid var(--c-taupe); padding: 8px; text-align: center; }
+.data-table tr:hover { background: rgba(246, 168, 85, 0.1); }
+.winner { color: #4caf50; font-weight: bold; } /* Verde para el ganador */
+
+/* === IMAGES === */
+.chart-img {
+    width: 100%; max-height: 350px; object-fit: contain;
+    border: 1px solid var(--c-taupe); background: rgba(255,255,255,0.02);
 }
 
-pre {
-    margin: 0;
-}
-
-code {
-    color: #d4d4d4;
-}
-
-.keyword { color: #569cd6; }
-.string { color: #ce9178; }
-.comment { color: #6a9955; }
-.function { color: #dcdcaa; }
-
-/* === BOTONES DE NAVEGACIÓN === */
+/* === NAVIGATION === */
 .nav-btn {
-    position: fixed;
-    bottom: 2rem;
-    padding: 0.8rem 2rem;
-    font-size: 1.2rem;
-    background-color: var(--color-5);
-    color: white;
-    border: 2px solid var(--color-1);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 20;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: fixed; bottom: 2rem;
+    background: var(--c-terra); color: white;
+    border: 2px solid var(--c-naranja);
+    padding: 0.8rem 1.8rem; border-radius: 30px;
+    cursor: pointer; font-weight: bold; z-index: 200;
+    transition: transform 0.2s;
 }
-
-.nav-btn:hover {
-    background-color: var(--color-1);
-    color: var(--color-3);
-    transform: translateY(-3px);
-}
-
-#prevBtn { left: 2rem; }
-#nextBtn { right: 2rem; }
+.nav-btn:hover { background: var(--c-naranja); color: var(--c-cafe); transform: scale(1.1); }
+#prev { left: 2rem; } #next { right: 2rem; }
 
 /* === FOOTER === */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 0.5rem;
-    background: var(--color-3);
-    color: var(--color-4);
-    font-size: 0.8rem;
-    z-index: 10;
+    position: fixed; bottom: 0; width: 100%;
+    background: var(--c-cafe); color: var(--c-oliva);
+    text-align: center; padding: 5px; font-size: 0.8rem;
+    z-index: 90;
 }
 
-/* === RESPONSIVE === */
 @media (max-width: 768px) {
-    header h1 { font-size: 1.2rem; }
-    h1.slide-title { font-size: 1.8rem; }
-    .content-wrapper { flex-direction: column; }
-    .nav-btn { padding: 0.5rem 1rem; font-size: 1rem; bottom: 3rem; }
+    .grid-container { grid-template-columns: 1fr; }
+    h2 { font-size: 1.8rem; }
+    .nav-btn { bottom: 3.5rem; padding: 0.5rem 1rem; }
 }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Evaluación Grupal 2: Análisis de Libros Académicos</h1>
+    <h1>Evaluación Grupal 2: Libros Académicos</h1>
 </header>
 
-<main id="main-container">
+<main id="slider">
 
     <section>
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <h1 class="slide-title">Análisis de Precios y Disponibilidad</h1>
-            <h2>Libros Académicos</h2>
-            <div style="margin-top: 2rem; border-top: 2px solid var(--color-1); padding-top: 2rem;">
-                <p><strong>Fecha de entrega:</strong> 16 de diciembre</p>
-                <p><strong>Presentación:</strong> 23 o 30 de diciembre</p>
-                <p style="margin-top: 1rem; color: var(--color-4);">Integración de Web Scraping y APIs</p>
+        <div style="text-align: center; margin-top: 5vh;">
+            <h2 style="font-size: 3.5rem; border: none; text-shadow: 3px 3px 5px black;">Precios y Disponibilidad</h2>
+            <h3 style="color: white; font-weight: normal;">Sistema Automatizado de Comparación</h3>
+            
+            <div style="margin-top: 3rem; background: rgba(0,0,0,0.3); padding: 2rem; border-radius: 15px; border: 1px solid var(--c-naranja); display: inline-block;">
+                <p><strong>📅 Entrega:</strong> 16 de Diciembre</p>
+                <p><strong>🎤 Presentación:</strong> 23/30 de Diciembre</p>
+                <hr style="border-color: var(--c-oliva); margin: 1rem 0;">
+                <p style="color: var(--c-naranja);">Python • Selenium • APIs • Pandas</p>
             </div>
         </div>
     </section>
 
     <section>
-        <h1 class="slide-title">Descripción del Proyecto</h1>
-        <div class="content-wrapper" style="align-items: flex-start;">
-            <div style="flex: 1;">
-                <h3>Objetivo</h3>
-                <p>
-                    Recopilar automáticamente información de distintas plataformas en línea sobre 
-                    precios, stock y formatos de libros académicos. El fin es comparar costos, 
-                    identificar disponibilidad y apoyar la toma de decisiones.
-                </p>
-                
-                <h3>Relevancia</h3>
-                <p>
-                    Facilita la comparación de precios para estudiantes, haciendo que la búsqueda 
-                    de material educativo sea más eficiente, económica y amena.
-                </p>
+        <h2>Descripción del Proyecto</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>📌 Objetivo</h3>
+                <p>Recopilar automáticamente información de plataformas (SBS, Crisol) y APIs académicas para comparar costos y disponibilidad de libros.</p>
+                <h3>💡 Relevancia</h3>
+                <p>Los estudiantes pierden tiempo buscando precios. Esta herramienta centraliza la información para tomar la decisión más económica.</p>
             </div>
-            <div style="flex: 1; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 10px; border: 1px solid var(--color-1);">
-                <h3>Producto Final</h3>
-                <ul style="text-align: left; padding-left: 2rem; color: #e0e0e0;">
-                    <li>📊 Conjunto de datos estructurado.</li>
-                    <li>💰 Comparativa de precios (SBS vs Crisol).</li>
-                    <li>📚 Detalles de autores y editoriales.</li>
-                    <li>🧩 Integración de múltiples fuentes.</li>
+            <div class="card" style="background: rgba(194, 195, 137, 0.1);">
+                <h3>📦 Producto Final</h3>
+                <ul>
+                    <li>Dataset Integrado (CSV).</li>
+                    <li>Tabla comparativa de precios (Caso Pinocho).</li>
+                    <li>Gráficos de análisis editorial.</li>
+                    <li>Código modular y reutilizable.</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section>
-        <h1 class="slide-title">Recopilación de Datos</h1>
-        <h2>Web Scraping con Selenium</h2>
-        <p>Extracción automatizada de precios desde librerías online (SBS y Crisol).</p>
+        <h2>Fase 1: Web Scraping & Lógica</h2>
+        <p>Extracción en tiempo real y algoritmo de decisión de compra.</p>
         
-        <div class="content-wrapper">
+        <div class="grid-container">
             <div class="code-box">
-<pre><code><span class="comment"># Configuración del Driver (Selenium)</span>
-<span class="keyword">def</span> <span class="function">iniciar_driver</span>():
-    options = Options()
-    options.add_argument(<span class="string">"--headless"</span>)
-    driver = webdriver.Chrome(
-        service=Service(ChromeDriverManager().install()),
-        options=options
-    )
-    <span class="keyword">return</span> driver
+<pre><code><span class="com"># Fragmento de Web Scraping.ipynb</span>
+<span class="kw">try</span>:
+    precio_sbs = float(item[<span class="str">'Precio_SBS'</span>].replace(<span class="str">"S/ "</span>,<span class="str">""</span>))
+    precio_cri = float(item[<span class="str">'Precio_CRI'</span>].replace(<span class="str">"S/ "</span>,<span class="str">""</span>))
 
-<span class="comment"># Extracción de datos de libros</span>
-<span class="keyword">for</span> libro <span class="keyword">in</span> libros_busqueda:
-    driver.get(f<span class="string">"https://www.sbs.com.pe/busqueda?q={libro}"</span>)
-    precio = driver.find_element(By.CLASS_NAME, <span class="string">"price"</span>).text
+    <span class="kw">if</span> precio_sbs < precio_cri:
+        mejor = <span class="str">"SBS"</span>
+    <span class="kw">elif</span> precio_cri < precio_sbs:
+        mejor = <span class="str">"Crisol"</span>
+    <span class="kw">else</span>:
+        mejor = <span class="str">"EMPATE"</span>
+        
     reporte.append({
-        <span class="string">'Titulo'</span>: libro,
-        <span class="string">'Precio_SBS'</span>: precio
+        <span class="str">'Título'</span>: titulo,
+        <span class="str">'Mejor Opción'</span>: mejor
     })
-</code></pre>
+<span class="kw">except</span>:
+    <span class="kw">print</span>(<span class="str">"Error en conversión"</span>)</code></pre>
             </div>
-            <div class="chart-box">
-                <div style="font-size: 4rem; color: var(--color-1);">🕷️ + 💻</div>
-                <p>Automatización de navegadores para simular la búsqueda humana y extraer datos en tiempo real.</p>
+            <div class="card">
+                <h3>🔍 Estrategia</h3>
+                <p>Se usó <strong>Selenium</strong> para navegar páginas dinámicas y extraer precios ocultos. Luego, un script limpia los símbolos de moneda ("S/") y compara valores numéricos.</p>
             </div>
         </div>
     </section>
 
     <section>
-        <h1 class="slide-title">Integración de Datos</h1>
-        <h2>Consumo de APIs y Limpieza</h2>
-        <p>Unificación de datos provenientes de OpenLibrary, OpenAlex y Crossref.</p>
+        <h2>Fase 2: Consumo de APIs</h2>
+        <p>Manejo de estructuras JSON complejas (OpenAlex, OpenLibrary, Crossref).</p>
         
-        <div class="content-wrapper">
-            <div class="chart-box">
-                <div style="width: 100%; height: 200px; background: var(--color-2); display: flex; align-items: center; justify-content: center; border-radius: 5px;">
-                    <span style="font-size: 2rem;">📂 CSV Integrado</span>
-                </div>
-                <p style="margin-top: 1rem;">Estructuración final del dataset para análisis.</p>
+        <div class="grid-container">
+            <div class="card">
+                <img src="Graficos/libros_por_fuente.png" class="chart-img" alt="Gráfico Fuentes" onerror="this.style.display='none'; this.parentElement.innerHTML+='<p>[Gráfico: Libros por Fuente]</p>'">
             </div>
             <div class="code-box">
-<pre><code><span class="comment"># Unificación de estructuras</span>
-openlibrary_clean[<span class="string">"fuente"</span>] = <span class="string">"OpenLibrary"</span>
-openalex_clean[<span class="string">"fuente"</span>] = <span class="string">"OpenAlex"</span>
-crossref_clean[<span class="string">"fuente"</span>] = <span class="string">"Crossref"</span>
+<pre><code><span class="com"># Fragmento de API_scripts.py</span>
+<span class="com"># Normalización de datos anidados (JSON)</span>
+<span class="kw">for</span> item <span class="kw">in</span> data[<span class="str">"results"</span>]:
+    libros.append({
+        <span class="str">"titulo"</span>: item.get(<span class="str">"title"</span>),
+        <span class="com"># Acceso seguro a campos anidados</span>
+        <span class="str">"anio"</span>: item.get(<span class="str">"publication_year"</span>),
+        <span class="str">"editorial"</span>: item.get(<span class="str">"primary_location"</span>, {})
+                      .get(<span class="str">"source"</span>, {})
+                      .get(<span class="str">"display_name"</span>)
+    })
 
-<span class="comment"># Creación del dataset maestro</span>
+<span class="kw">with</span> open(<span class="str">"data/raw/openalex_books.json"</span>, <span class="str">"w"</span>) <span class="kw">as</span> f:
+    json.dump(data, f, indent=4)</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Resultados: Caso "Pinocho"</h2>
+        <p>Datos reales extraídos de <code>comparativa_pinocho.csv</code>.</p>
+        
+        <div class="card" style="width: 100%; max-width: 1000px; background: #2a1a10;">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ISBN</th>
+                        <th>Título</th>
+                        <th>Precio SBS</th>
+                        <th>Precio Crisol</th>
+                        <th>Mejor Opción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9788491421337</td>
+                        <td>PINOCHO</td>
+                        <td>S/ 34.93</td>
+                        <td>S/ 49.90</td>
+                        <td class="winner">SBS 🏆</td>
+                    </tr>
+                    <tr>
+                        <td>9788491056584</td>
+                        <td>AVENTURAS DE PINOCHO</td>
+                        <td>S/ 49.00</td>
+                        <td>S/ 49.00</td>
+                        <td>EMPATE 🤝</td>
+                    </tr>
+                    <tr>
+                        <td>9786124301803</td>
+                        <td>PINOCHO Y SUS AVENTURAS...</td>
+                        <td>S/ 39.00</td>
+                        <td>S/ 43.00</td>
+                        <td class="winner">SBS 🏆</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
+                * La herramienta detectó automáticamente que SBS ofrecía mejores precios en el 75% de los casos coincidentes para esta búsqueda.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Análisis Global de Datos</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Editoriales Dominantes</h3>
+                <img src="Graficos/libros_por_editorial.png" class="chart-img" alt="Editoriales" onerror="this.style.display='none'">
+                <p>Análisis de las principales editoriales encontradas (Springer, O'Reilly).</p>
+            </div>
+            <div class="card">
+                <h3>Integración (Pandas)</h3>
+                <div class="code-box">
+<pre><code><span class="com"># Integracion_Analisis.ipynb</span>
 dataset = pd.concat([
     openlibrary_clean, 
     openalex_clean, 
     crossref_clean
-], ignore_index=<span class="keyword">True</span>)
+], ignore_index=<span class="kw">True</span>)
 
-<span class="comment"># Eliminación de duplicados</span>
-dataset = dataset.drop_duplicates(subset=<span class="string">"titulo"</span>)
-dataset.to_csv(<span class="string">"libros_academicos_integrados.csv"</span>)
-</code></pre>
+<span class="com"># Eliminación de duplicados</span>
+dataset = dataset.drop_duplicates(subset=<span class="str">"titulo"</span>)
+dataset.to_csv(<span class="str">"libros_integrados.csv"</span>)</code></pre>
+                </div>
             </div>
         </div>
     </section>
 
     <section>
-        <h1 class="slide-title">Análisis y Resultados</h1>
-        <h2>Distribución por Editorial y Año</h2>
-        
-        <div class="content-wrapper">
-            <div class="code-box" style="flex: 0 0 40%;">
-<pre><code><span class="comment"># Análisis de editoriales top</span>
-top_editoriales = dataset[<span class="string">'editorial'</span>].value_counts().head(10)
-
-plt.figure(figsize=(10, 6))
-top_editoriales.plot(kind=<span class="string">'barh'</span>, color=<span class="string">'skyblue'</span>)
-plt.title(<span class="string">"Top 10 Editoriales"</span>)
-plt.xlabel(<span class="string">"Cantidad de Libros"</span>)
-plt.show()
-</code></pre>
-            </div>
-            <div class="chart-box">
-                <img src="Graficos/libros_por_editorial.png" alt="Gráfico de Barras: Editoriales" class="chart-img" onerror="this.style.display='none'; this.parentElement.innerHTML+='<p>[Gráfico: Libros por Editorial]</p>'">
-                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Visualización de la oferta académica predominante.</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h1 class="slide-title">Conclusiones</h1>
-        <div style="background: rgba(0,0,0,0.3); padding: 2rem; border-radius: 20px; border: 2px solid var(--color-4); max-width: 800px;">
-            <ul style="text-align: left; font-size: 1.3rem; line-height: 2;">
-                <li>✅ <strong>Automatización Exitosa:</strong> Flujo completo desde la web hasta el CSV.</li>
-                <li>✅ <strong>Valor para el Usuario:</strong> Ahorro de tiempo y dinero en la búsqueda de textos.</li>
-                <li>✅ <strong>Datos Robustos:</strong> Integración de múltiples fuentes (APIs y Scraping) para mayor cobertura.</li>
-                <li>✅ <strong>Trabajo Colaborativo:</strong> Uso eficiente de Git/GitHub para la integración de módulos.</li>
+        <h2>Conclusiones</h2>
+        <div class="card" style="max-width: 800px; border: 2px solid var(--c-naranja);">
+            <ul style="font-size: 1.2rem; line-height: 2;">
+                <li>✅ <strong>Eficacia:</strong> Se demostró un ahorro real (ver caso Pinocho) automatizando la comparación.</li>
+                <li>✅ <strong>Robustez:</strong> El manejo de errores en JSON (<code>item.get</code>) evitó caídas del sistema ante datos faltantes.</li>
+                <li>✅ <strong>Integración:</strong> Se unificaron fuentes heterogéneas (Scraping HTML + REST APIs) en un solo flujo.</li>
+                <li>✅ <strong>Colaboración:</strong> Estructura modular de carpetas (<code>processed/raw</code>) facilitada por Git.</li>
             </ul>
         </div>
     </section>
 
 </main>
 
-<button id="prevBtn" class="nav-btn" onclick="prevSlide()">❮ Anterior</button>
-<button id="nextBtn" class="nav-btn" onclick="nextSlide()">Siguiente ❯</button>
+<button id="prev" class="nav-btn" onclick="move(-1)">❮ Anterior</button>
+<button id="next" class="nav-btn" onclick="move(1)">Siguiente ❯</button>
 
 <footer>
     © 2025 - Evaluación Grupal 2 | Análisis de Datos
 </footer>
 
 <script>
-    let currentSlide = 0;
-    const container = document.getElementById('main-container');
-    const sections = document.querySelectorAll('section');
-    const totalSlides = sections.length;
+    let idx = 0;
+    const slider = document.getElementById('slider');
+    const total = document.querySelectorAll('section').length;
 
-    function showSlide(index) {
-        if (index < 0) index = 0;
-        if (index >= totalSlides) index = totalSlides - 1;
-        
-        currentSlide = index;
-        const offset = -currentSlide * 100;
-        container.style.transform = `translateX(${offset}%)`;
+    function move(n) {
+        idx += n;
+        if (idx < 0) idx = 0;
+        if (idx >= total) idx = total - 1;
+        slider.style.transform = `translateX(-${idx * 100}%)`;
     }
 
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
-
-    // Navegación con teclado
+    // Teclado
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
-        if (e.key === 'ArrowLeft') prevSlide();
+        if(e.key === 'ArrowRight' || e.key === ' ') move(1);
+        if(e.key === 'ArrowLeft') move(-1);
+    });
+
+    // Touch
+    let xDown = null;
+    document.addEventListener('touchstart', e => xDown = e.touches[0].clientX);
+    document.addEventListener('touchmove', e => {
+        if (!xDown) return;
+        let xUp = e.touches[0].clientX;
+        let diff = xDown - xUp;
+        if (Math.abs(diff) > 50) {
+            move(diff > 0 ? 1 : -1);
+            xDown = null;
+        }
     });
 </script>
 
