@@ -30,9 +30,10 @@ Facilita la comparación de precios para estudiantes, de modo que la busqueda de
 **Producto:**  
 Conjunto de datos con precios, autores y editoriales. 
 
-**Objetivos:**
--El wescraping que ejecutamos en este proyecto tiene como fin elaborar un programa de ayuda en la eleccion del mejor precio a la hora de elegir un libro en especifico. Este programa
+**Objetivos y resultados del Webscraping:**
+El wescraping que ejecutamos en este proyecto tiene como fin elaborar un programa de ayuda en la eleccion del mejor precio a la hora de elegir un libro en especifico. Este programa
 le permite al usuario imgresar el nombre del libro de su eleccion y tendra como resultado una tabla con los libros que tiene ese nombre o parte de el, cabe aclarar que se tendran los datos de estos libros al comparar los precios de las 2 paginas web elegidas para este proyecto, dando como resultado un cuadro comparativo entre los precios que encontro y mostrandolo al usuario para su libre eleccion. 
+Ademas se logro guardar los datos de todos los libros que se encontraron en la busqueda en tablas con formato csv, tanto de la tienda SBS como de la tienda Crisol, ademas de un cuadro comparativo entre estas dos tiendas, en este caso se uso como ejemplo el libro infantil "Pinocho". 
 
 **Fecha de entrega:** 16 de diciembre  
 **Fecha de presentación:** 23 o 30 de diciembre  
@@ -149,6 +150,7 @@ le permite al usuario imgresar el nombre del libro de su eleccion y tendra como 
     reforzando el enfoque del proyecto en la integración de datos automatizada.
   </li>
 </ul>
+
 
 
 
