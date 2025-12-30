@@ -30,8 +30,9 @@ Facilita la comparación de precios para estudiantes, de modo que la busqueda de
 **Producto:**  
 Conjunto de datos con precios, autores y editoriales. 
 
-**Objetivos:**
-Objetivo General: Desarrollar un sistema integral de extracción y procesamiento de datos bibliográficos que combine el consumo de APIs abiertas con técnicas de Web Scraping, con el fin de centralizar información académica y proporcionar una herramienta automatizada de comparación de precios en tiempo real entre librerías locales (SBS y Crisol), facilitando así la toma de decisiones económicas y de investigación para el usuario.
+**Objetivos:**  
+Objetivo General: 
+- Desarrollar un sistema integral de extracción y procesamiento de datos bibliográficos que combine el consumo de APIs abiertas con técnicas de Web Scraping, con el fin de centralizar información académica y proporcionar una herramienta automatizada de comparación de precios en tiempo real entre librerías locales (SBS y Crisol), facilitando así la toma de decisiones económicas y de investigación para el usuario.
 
 Objetivos Específicos:
 
@@ -156,8 +157,5 @@ Objetivos Específicos:
     reforzando el enfoque del proyecto en la integración de datos automatizada.
   </li>
 </ul>
-
-
-
 
 
