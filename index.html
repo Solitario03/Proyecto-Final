@@ -523,9 +523,13 @@ h3 {
         </div>
 
         <div class="code-box">
-<pre><code><span class="com"># Visualización de Proporciones (Matplotlib)</span>
-df[<span class="str">'fuente'</span>].value_counts().plot(kind=<span class="str">'pie'</span>, autopct=<span class="str">'%1.1f%%'</span>, startangle=90)
-plt.title(<span class="str">"Composición del Dataset por Origen"</span>)</code></pre>
+<pre><code><span class="com"># Visualización de Cantidades (Matplotlib)</span>
+dataset[<span class="str">"fuente"</span>].value_counts().plot(kind=<span class="str">"bar"</span>)
+
+plt.title(<span class="str">"Cantidad de libros por fuente de datos"</span>)
+plt.xlabel(<span class="str">"Fuente"</span>)
+plt.ylabel(<span class="str">"Cantidad de libros"</span>)
+plt.show()</code></pre>
         </div>
 
         <div class="explanation-box">
@@ -544,10 +548,13 @@ plt.title(<span class="str">"Composición del Dataset por Origen"</span>)</code>
         </div>
 
         <div class="code-box">
-<pre><code><span class="com"># Análisis de Frecuencia (Pandas)</span>
-top_editoriales = df[<span class="str">'editorial'</span>].value_counts().head(10)
-top_editoriales.plot(kind=<span class="str">'barh'</span>, color=<span class="str">'skyblue'</span>)
-plt.xlabel(<span class="str">"Cantidad de Publicaciones"</span>)</code></pre>
+<pre><code><span class="com"># Filtrado del Top 10 y Gráfico Horizontal</span>
+dataset[<span class="str">"editorial"</span>].value_counts().head(10).plot(kind=<span class="str">"barh"</span>)
+
+plt.title(<span class="str">"Principales editoriales presentes en el dataset"</span>)
+plt.xlabel(<span class="str">"Cantidad de libros"</span>)
+plt.ylabel(<span class="str">"Editorial"</span>)
+plt.show()</code></pre>
         </div>
 
         <div class="explanation-box">
@@ -566,9 +573,13 @@ plt.xlabel(<span class="str">"Cantidad de Publicaciones"</span>)</code></pre>
         </div>
 
         <div class="code-box">
-<pre><code><span class="com"># Distribución Histórica</span>
-df[<span class="str">'anio'</span>].plot(kind=<span class="str">'hist'</span>, bins=20, color=<span class="str">'salmon'</span>, edgecolor=<span class="str">'black'</span>)
-plt.title(<span class="str">"Vigencia de la Información Bibliográfica"</span>)</code></pre>
+<pre><code><span class="com"># Análisis de Tendencia Temporal</span>
+dataset[<span class="str">"anio"</span>].value_counts().sort_index().plot(kind=<span class="str">"line"</span>, marker=<span class="str">"o"</span>)
+
+plt.title(<span class="str">"Distribución de libros académicos por año de publicación"</span>)
+plt.xlabel(<span class="str">"Año"</span>)
+plt.ylabel(<span class="str">"Cantidad de libros"</span>)
+plt.show()</code></pre>
         </div>
 
         <div class="explanation-box">
